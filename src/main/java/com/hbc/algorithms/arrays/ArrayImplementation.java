@@ -1,5 +1,4 @@
 package com.hbc.algorithms.arrays;
-import javafx.util.Pair;
 
 import java.util.*;
 
@@ -53,7 +52,15 @@ public class ArrayImplementation implements ArrayInterface {
 
     @Override
     public Integer removeDuplicatesFromSortedArray(ArrayList<Integer> sortedArray) {
-        return null;
+        int i=0;
+        if (sortedArray.size() == 0) return 0;
+        for (int j=1; j < sortedArray.size(); j++) {
+            if (sortedArray.get(i) != sortedArray.get(j)) {
+                i++;
+                sortedArray.set(i , sortedArray.get(j));
+            }
+        }
+        return i+1;
     }
 
     @Override

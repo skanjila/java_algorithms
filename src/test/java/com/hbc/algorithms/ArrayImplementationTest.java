@@ -6,6 +6,7 @@ import com.hbc.algorithms.arrays.Interval;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -84,6 +85,42 @@ public class ArrayImplementationTest {
         Interval resultsOfCall = curImpl.mergeIntervals(arr);
         assertTrue( resultsOfCall.start == 2 );
         assertTrue( resultsOfCall.end == 11 );
+    }
+
+
+    @Test
+    public void removeDuplicatesInSortedArrayHappyPath()
+    {
+        ArrayImplementation curImpl = new ArrayImplementation();
+        ArrayList<Integer> arr=new ArrayList<>();
+        arr.add(1);
+        arr.add(1);
+        arr.add(2);
+        arr.add(2);
+        arr.add(6);
+        arr.add(8);
+        Integer resultsOfCall = curImpl.removeDuplicatesFromSortedArray(arr);
+        assert(resultsOfCall == 4);
+    }
+
+    @Test
+    public void removeDuplicatesInSortedArrayAnotherHappyPath()
+    {
+        ArrayImplementation curImpl = new ArrayImplementation();
+        ArrayList<Integer> arr=new ArrayList<>();
+        arr.add(1);
+        arr.add(2);
+        arr.add(2);
+        arr.add(7);
+        arr.add(4);
+        arr.add(3);
+        arr.add(8);
+        arr.add(9);
+        arr.add(3);
+        arr.add(10);
+        Collections.sort(arr);
+        Integer resultsOfCall = curImpl.removeDuplicatesFromSortedArray(arr);
+        assert(resultsOfCall == 8);
     }
 
 }
