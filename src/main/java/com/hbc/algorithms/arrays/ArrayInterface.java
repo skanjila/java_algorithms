@@ -2,6 +2,7 @@ package com.hbc.algorithms.arrays;
 
 import java.lang.Integer;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /** An Integererface which defines the set of methods to be implemented around arrays
@@ -80,4 +81,16 @@ public interface ArrayInterface{
      *
      */
     public Interval mergeIntervals(Interval intervals[]);
+
+    /**
+     * Given two sorted arrays merge the result into a single list keeping the natural
+     * ordering between the lists, the algorithm is to first find the minimum element
+     * between the two lists and then search across both lists to find the next largest element
+     * till one of the lists is null, at this point we bring in all the other items in
+     * the other list.  This is a depiction of the merge operation in the merge sort.
+     * @param arr1 the first list to merge from
+     * @param arr2 the second list to merge from
+     * @return the merged result
+     */
+    public int[] mergeTwoSortedArrays(int[] arr1, int[] arr2);
 }

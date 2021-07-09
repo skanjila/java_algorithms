@@ -123,4 +123,18 @@ public class ArrayImplementationTest {
         assert(resultsOfCall == 8);
     }
 
+
+    @Test
+    public void testMergedSortedArray()
+    {
+        int [] firstArray = new int[]{9,14,21,34,75};
+        int [] secondArray = new int[]{1,6,7,77,104};;
+        ArrayImplementation curImpl = new ArrayImplementation();
+        int [] resultsOfCall = curImpl.mergeTwoSortedArrays(firstArray, secondArray);
+        assert(resultsOfCall[0] == 1);
+        assert(resultsOfCall[1] == 6);
+        assert(resultsOfCall[2] == 7);
+        assert(resultsOfCall[2] == 9);
+    }
+
 }

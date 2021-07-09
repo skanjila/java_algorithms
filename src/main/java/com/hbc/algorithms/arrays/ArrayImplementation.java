@@ -103,6 +103,33 @@ public class ArrayImplementation implements ArrayInterface {
         return stack.pop();
     }
 
+    @Override
+    public int[] mergeTwoSortedArrays(int[] arr1, int[] arr2) {
+        int[] mergedResult = new int[arr1.length+arr2.length];
+        int arr1Position = 0;
+        int arr2Position = 0;
+        int arr1Length = arr1.length;
+        int arr2Length = arr2.length;
+        int mergedPosition =0;
+
+        while (arr1Position < arr1Length && arr2Position < arr2Length) {
+            if (arr1[arr1Position] < arr2[arr2Position]) {
+                mergedResult[mergedPosition++] = arr1[arr1Position++];
+            } else if (arr2[arr2Position] < arr1[arr1Position]) {
+                mergedResult[mergedPosition++] = arr2[arr2Position++];
+            }
+        }
+
+        while (arr1Position < arr1Length) {
+            mergedResult[mergedPosition++] = arr1[arr1Position++];
+        }
+
+        while (arr2Position < arr2Length) {
+            mergedResult[mergedPosition++] = arr2[arr2Position++];
+        }
+        return mergedResult;
+    }
+
     private ArrayList<Integer> calculateRemainingSum(ArrayList<Integer> list) {
         ArrayList<Integer> sums = new ArrayList<>();
         for (int i = 0; i < list.size() - 1; i++) {
