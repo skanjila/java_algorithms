@@ -1,8 +1,5 @@
 package com.hbc.algorithms;
-
-
 import com.hbc.algorithms.strings.StringsImplementation;
-import com.hbc.algorithms.strings.StringsInterface;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
