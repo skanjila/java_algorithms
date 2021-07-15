@@ -36,4 +36,24 @@ public class StringsImplementation implements StringsInterface {
     public String replaceAllSpaces(String inputString) {
         return null;
     }
+
+    @Override
+    public boolean isStringAPalindrome(String inputString) {
+        if (inputString.length() == 0 || inputString==null) {
+            return false;
+        }
+        char [] strArray = inputString.toCharArray();
+        int startPosition =0;
+        int endPosition = strArray.length - 1;
+        char startChar = ' ';
+        char endChar = ' ';
+
+        while (startPosition <= endPosition) {
+            startChar = strArray[startPosition++];
+            endChar = strArray[endPosition--];
+            if (startChar != endChar && startChar!=' ' && endChar!=' ')
+                return false;
+        }
+        return true;
+    }
 }

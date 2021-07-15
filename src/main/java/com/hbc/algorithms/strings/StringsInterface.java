@@ -34,4 +34,12 @@ public interface StringsInterface {
      * @return
      */
     public String replaceAllSpaces(String inputString);
+
+
+    /**
+     * Given a string determine whether or not its a palindrome
+     * @param inputString the string which we need to evaluate
+     * @return whether or not the string is a valid palindrome
+     */
+    public boolean isStringAPalindrome(String inputString);
 }
