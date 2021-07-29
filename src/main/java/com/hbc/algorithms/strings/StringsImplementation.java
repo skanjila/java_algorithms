@@ -2,6 +2,8 @@ package com.hbc.algorithms.strings;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StringsImplementation implements StringsInterface {
 
@@ -55,5 +57,40 @@ public class StringsImplementation implements StringsInterface {
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public boolean isStringPermutationOfAPalindrome(String inputString) {
+        if (inputString.length()==0)
+            return false;
+        char [] charsOfString = inputString.toCharArray();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+
+        for (char ch: charsOfString) {
+            int count = 1;
+            if (map.containsKey(ch)) {
+                count = map.get(ch);
+                count++;
+            }
+            map.put(ch,count);
+        }
+        boolean foundOdd = false;
+        // return false if more than one odd found
+        for (char ch : map.keySet()) {
+            int value = map.get(ch);
+            if (value % 2 == 1) {
+                if (foundOdd) {
+                    return false;
+                }
+                foundOdd = true;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean oneEditAway(String inputStringOne, String inputStringTwo) {
+        return false;
+
     }
 }

@@ -42,4 +42,23 @@ public interface StringsInterface {
      * @return whether or not the string is a valid palindrome
      */
     public boolean isStringAPalindrome(String inputString);
+
+
+    /**
+     * Given a string figure out if its a permutation of a palindrome, examples
+     * include race car, abba etc
+     * @param inputString the string to iterate over
+     * @return a flag identifying whether the string is a permutation of a palindrome
+     */
+    public boolean isStringPermutationOfAPalindrome(String inputString);
+
+    /**
+     * Given two strings write a function to determine whether the two strings
+     * are one edit away from each other, there are three types of edits, you can
+     * insert a character, remove a character or replace a character.
+     * @param inputStringOne
+     * @param inputStringTwo
+     * @return a flag indicating whether the edit distance is one
+     */
+    public boolean oneEditAway(String inputStringOne, String inputStringTwo);
 }
