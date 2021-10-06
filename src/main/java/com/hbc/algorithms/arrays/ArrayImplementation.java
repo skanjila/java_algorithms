@@ -46,6 +46,35 @@ public class ArrayImplementation implements ArrayInterface {
     }
 
     @Override
+    public boolean findSumOfThreeAlternate(int [] arrayOfIntegers, Integer requiredSum) {
+        //first we sort the array
+        Arrays.sort(arrayOfIntegers);
+
+        for (int i=0;i<arrayOfIntegers.length;i++) {
+            int remainingSum = requiredSum - arrayOfIntegers[i];
+            if (findSumOfTwo(arrayOfIntegers, remainingSum, i+1))
+                return true;
+        }
+        return false;
+    }
+
+    private boolean findSumOfTwo(int [] arrayOfIntegers, int remainingSum, int startIndex) {
+        int localSum = 0;
+        int i= startIndex;
+        int j= arrayOfIntegers.length - 1;
+        while (i<j) {
+            localSum = arrayOfIntegers[i] + arrayOfIntegers[j];
+            if (remainingSum == localSum)
+                return true;
+            else if (localSum < remainingSum)
+                i++;
+            else if (localSum > remainingSum)
+                j--;
+        }
+        return false;
+    }
+
+    @Override
     public Double findMedianOfTwoSortedArrays(ArrayList<Integer> nums1, ArrayList<Integer> nums2) {
         return null;
     }

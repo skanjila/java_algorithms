@@ -51,6 +51,16 @@ public interface ArrayInterface{
      */
     public boolean findSumOfThree(ArrayList<Integer> arrayOfIntegers, Integer requiredSum);
 
+    /**
+     * Given an array of Integers and a value, this is an alternate solution to remove the
+     * first part of the array and try to match the required sum by sorting the array and walking
+     * pointers from both ends
+     * @param arrayOfIntegers the integer array that we're dealing with
+     * @param requiredSum the required sum left to compute
+     * @return a flog indicating whether or not we've found the needed sum
+     */
+    public boolean findSumOfThreeAlternate(int [] arrayOfIntegers, Integer requiredSum);
+
 
     /**
      * Given two sorted arrays find the median of these arrays
